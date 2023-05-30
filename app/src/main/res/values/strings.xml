@@ -4,4 +4,12 @@
     <string name="name">Lion School</string>
     <string name="button">ENTRAR</string>
     <string name="faleConosco">Fale Conosco</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="escolha">Escolha um curso para gerenciar</string>
+    <string name="redes">REDES</string>
+    <string name="ds">DS</string>
+    <string name="telefone">(11) 4774-4700</string>
+    <string name="email">lionschool@gmail.com</string>
+    <string name="endereco">Rua tcc, 211,  Centro, Jandira</string>
+    <string name="copyright">Copyright © 2023 | Genivania Macedo</string>
 </resources>

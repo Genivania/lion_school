@@ -5,7 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -72,7 +74,9 @@ fun Greeting() {
                     modifier = Modifier
                         .width(140.dp),
                     colors = ButtonDefaults.buttonColors(Color( 0,117,255)),
-                    onClick = { /*TODO*/ }
+                    onClick = { /*TODO*/ },
+                    shape = RoundedCornerShape(30.dp)
+
                 ) {
                     Text(
                         text = stringResource(id = R.string.button),
@@ -96,6 +100,8 @@ fun Greeting() {
         }//Column
     } //Surface
 }// greting
+
+
 
 
 
