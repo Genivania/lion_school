@@ -1,6 +1,7 @@
 package br.senai.sp.jandira.lionschool
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -33,7 +34,6 @@ class HomeActivity : ComponentActivity() {
         }
     }
 }
-
 @Composable
 fun Greeting2(name: String) {
    Surface(
@@ -64,7 +64,14 @@ fun Greeting2(name: String) {
                        color = Color.White,
                        fontSize = 18.sp,
                    )}
-               Image(painter = painterResource(id = R.drawable.baseline_arrow_back_24), contentDescription = "")
+               Button(onClick = { /*TODO*/ },
+                   modifier = Modifier
+                       .width(200.dp)
+                       .height(40.dp),
+                   colors = ButtonDefaults.buttonColors(Color( 0,0,0))
+               ) {
+                   Image(painter = painterResource(id = R.drawable.baseline_arrow_back_24), contentDescription = "")
+               }
            }//Row
            Row(
                modifier = Modifier
@@ -99,7 +106,31 @@ fun Greeting2(name: String) {
                                modifier = Modifier
                                    .width(140.dp)
                                    .height(200.dp),
-                               onClick = { /*TODO*/ },
+                               onClick = {
+
+//                                   val call = RetrofitFactory().getCharacterService().getCharacterByPages(1)
+//
+//                                   call.enqueue(object : Callback<CharacterList>{
+//                                       override fun onResponse(
+//                                           call: Call<CharacterList>,
+//                                           response: Response<CharacterList>
+//                                       ) {
+//                                           results = response.body()!!.results
+//                                           info = response.body()!!.info
+//
+//                                       }
+//
+//                                       override fun onFailure(call: Call<CharacterList>, t: Throwable) {
+//
+//                                           Log.i(
+//                                               "ds2m",
+//                                               "onFailure: ${t.message}"
+//                                           )
+//                                           TODO("Not yet implemented")
+//                                       }
+//
+//                                   })
+                               },
                                colors = ButtonDefaults.buttonColors(Color( 108,45,250)),
                                shape = RoundedCornerShape(25.dp)
 
@@ -143,5 +174,12 @@ fun Greeting2(name: String) {
        }//Column
    }//Surface
 }
+//@Preview(showBackground = true)
+//@Composable
+//fun DefaultPreview() {
+//    LionSchoolTheme {
+//        Greeting2("Android")
+//    }
+//}
 
 

@@ -1,5 +1,6 @@
 package br.senai.sp.jandira.lionschool
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -13,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
@@ -38,6 +40,9 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun Greeting() {
+
+    val  context = LocalContext.current
+
     Surface(
         modifier = Modifier.fillMaxSize(),
     ){
@@ -71,10 +76,13 @@ fun Greeting() {
                     modifier = Modifier.size(300.dp)
                 )
                 Button(
+
                     modifier = Modifier
                         .width(140.dp),
                     colors = ButtonDefaults.buttonColors(Color( 0,117,255)),
-                    onClick = { /*TODO*/ },
+                    onClick = { val intent = Intent(context,HomeActivity::class.java)
+                              context.startActivity(intent)
+                              },
                     shape = RoundedCornerShape(30.dp)
 
                 ) {
@@ -87,20 +95,39 @@ fun Greeting() {
 
                 Column(modifier = Modifier.fillMaxSize()
                     .padding(bottom = 16.dp),
-                    horizontalAlignment = Alignment.End,
+                    horizontalAlignment = Alignment.Start,
                     verticalArrangement = Arrangement.Bottom
-                ) {
-                    Text(text = stringResource(id = R.string.faleConosco),
-                        fontFamily = FontFamily.Serif,
-                        color = Color.White,
-                        fontSize = 22.sp,
-                    )
+                ){
+                    Button(
+                        modifier = Modifier
+                            .width(360.dp),
+
+                        colors = ButtonDefaults.buttonColors(Color( 0,0,0)),
+                        onClick = { val intentFale = Intent(context,SupportActivity::class.java)
+                            context.startActivity(intentFale)
+                        }
+
+
+                    ) {
+
+                        Text(text = stringResource(id = R.string.faleConosco),
+                            fontFamily = FontFamily.Serif,
+                            color = Color.White,
+                            fontSize = 22.sp,
+                        )
+                    }
                 }
             }//Column
         }//Column
     } //Surface
 }// greting
-
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreview() {
+    LionSchoolTheme {
+        Greeting()
+    }
+}
 
 
 
