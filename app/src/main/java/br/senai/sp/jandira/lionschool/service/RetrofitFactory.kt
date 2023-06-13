@@ -1,10 +1,12 @@
-package br.senai.sp.jandira.lionschool.service
-
+//package br.senai.sp.jandira.lionschool.service
+//
 //import retrofit2.Retrofit
 //import retrofit2.converter.gson.GsonConverterFactory
+//
 //class RetrofitFactory {
 //
-//    private val URL_BASE = "https://rickandmortyapi.com/api/"
+//
+//    private val URL_BASE = "https://backlion-school-production.up.railway.app/v1/lion-school/"
 //
 //    private val retrofitFactory = Retrofit
 //        .Builder()
@@ -13,7 +15,14 @@ package br.senai.sp.jandira.lionschool.service
 //        .build()
 //
 //
-//    fun getCharacterService(): CharacterService {
-//        return retrofitFactory.create(CharacterService::class.java)
+//    fun getCursoService(): CursoService {
+//        return retrofitFactory.create(CursoService::class.java)
 //    }
+//
+//    fun getAlunosService(): AlunoService {
+//        return  retrofitFactory.create(AlunoService::class.java)
+//    }
+//
+//
+//
 //}
